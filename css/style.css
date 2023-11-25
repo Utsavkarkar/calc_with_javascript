@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.calc{
+	margin-left: auto;
+	margin-right: auto;
+}
+.keys{
+	padding: 22px 22px !important;
+	font-size: 26px !important;
+	border-radius: 50px !important;
+}
+.textbar{
+	padding: 10px 18px;
+	border: 1px solid black;
+	text-align: right;
+	border-radius: 25px;
+}
+.main{
+	background-color: black;
+	border-radius: 40px;
+}

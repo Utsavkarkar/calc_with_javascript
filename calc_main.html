@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Main_calc</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript">
+		let f_val,s_val,sign,ans;
+		function no(val) {
+			document.getElementById('result').value += val;
+		}
+		function action(s) {
+			f_val=document.getElementById('result').value;
+			document.getElementById('result').value ="";
+			sign=s;
+		}
+		function result(){
+			s_val=document.getElementById('result').value;
+			 if(sign == '+')
+			 {
+			 	ans=parseInt(f_val)+parseInt(s_val);
+			 }
+			 else if(sign == '-'){
+			 	ans=f_val-s_val;
+			 }
+			 else if(sign == '*'){
+			 	ans=f_val*s_val;
+			 }
+			 else if(sign == '/')
+			 {
+			 	ans=f_val/s_val;
+			 }
+			 document.getElementById('result').value=ans;
+		}
+		function backclean(){
+			let current_value=document.getElementById('result').value;
+			let after_current_value=current_value.substr(0,current_value.length-1);
+			document.getElementById('result').value=after_current_value;
+		}
+		function cleanthis(){
+			document.getElementById('result').value="";
+		}
+
+	</script>
+</head>
+<body>
+	<section>
+		<div class="container ">
+			<div class="row ">
+				<div class="calc col-lg-6 col-xl-6 col-xxl-6 col-12 border p-5 main">
+				<h3 class="text-center text-success">CALCULATOR</h3>
+				<div class="row mt-5">
+					<div class="col-12">
+						<input id="result" type="text" name="" placeholder="0" class="w-100 textbar" readonly>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col-3"><input type="button" value="7" class="btn w-100 keys text-center text-white" onclick="no(this.value)" ></div>
+					<div class="col-3"><input type="button" value="8" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="9" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="+" class="btn w-100 keys text-center text-success" onclick="action(this.value)"></div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-3"><input type="button" value="4" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="5" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="6" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="-" class="btn w-100 keys text-center text-success" onclick="action(this.value)"></div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-3"><input type="button" value="1" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="2" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="3" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="*" class="btn w-100 keys text-center text-success" onclick="action(this.value)"></div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-3"><input type="button" value="C" class="btn w-100 keys text-center text-success" onclick="cleanthis()"></div>
+					<div class="col-3"><input type="button" value="0" class="btn w-100 keys text-center text-white" onclick="no(this.value)"></div>
+					<div class="col-3"><input type="button" value="=" class="btn w-100 keys text-center text-success" onclick="result()"></div>
+					<div class="col-3"><input type="button" value="/" class="btn w-100 keys text-center text-danger" onclick="action(this.value)"></div>
+				</div>
+				<div class="row mt-1">
+					<div class="col-3"></div>
+					<div class="col-6"><input type="button" value="BACK SPACE" class="btn w-100 keys text-center text-success" onclick="backclean()"></div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
